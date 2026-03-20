@@ -1,0 +1,252 @@
+/* ================= LOCATION WRAPPER ================= */
+.location-wrapper {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  z-index: 100;
+}
+
+/* ================= LOCATION BAR ================= */
+.location-bar {
+  background: white;
+  border-radius: 50px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  min-width: 260px;
+  max-width: 320px;
+}
+
+.location-bar:hover, .location-bar.active {
+  box-shadow: 0 6px 15px rgba(255, 77, 77, 0.15);
+  border-color: #ff4d4d;
+}
+
+.pin-icon {
+  font-size: 20px;
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.location-text .title {
+  font-size: 11px;
+  color: #ff4d4d;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.location-text .address-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #888;
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* ================= DROPDOWN MODAL ================= */
+.location-dropdown {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380px;
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border: 1px solid #f0f0f0;
+  animation: dropDownScale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transform-origin: top center;
+}
+
+@keyframes dropDownScale {
+  0% { opacity: 0; transform: translateX(-50%) scaleY(0.9); }
+  100% { opacity: 1; transform: translateX(-50%) scaleY(1); }
+}
+
+.dropdown-header h3 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #222;
+  text-align: center;
+}
+
+/* ================= CURRENT LOCATION BTN ================= */
+.current-location-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #fff4f4;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.current-location-btn:hover {
+  background: #ffebeb;
+  border-color: #ffcccc;
+  transform: translateY(-2px);
+}
+
+.current-location-btn .icon {
+  font-size: 24px;
+}
+
+.current-location-btn .btn-text h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #ff4d4d;
+  font-weight: 700;
+}
+
+.current-location-btn .btn-text p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+/* ================= MANUAL FORM ================= */
+.manual-address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.manual-address-form input {
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  background: #fafafa;
+  transition: all 0.3s;
+}
+
+.manual-address-form input:focus {
+  background: white;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 0 4px rgba(255, 77, 77, 0.1);
+}
+
+.manual-address-form button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.manual-address-form button:hover {
+  background: #ff4d4d;
+}
+
+.manual-address-form button:active {
+  transform: scale(0.98);
+}
+
+/* ================= SAVED ADDRESSES ================= */
+.saved-addresses-section {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.saved-addresses-section h4 {
+  margin: 0 0 15px 0;
+  font-size: 13px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.saved-address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saved-address-card:hover {
+  background: white;
+  border-color: #ddd;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.saved-address-card .icon {
+  font-size: 20px;
+  color: #ff4d4d;
+}
+
+.saved-address-card .details h5 {
+  margin: 0 0 5px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+.saved-address-card .details p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .location-dropdown {
+    width: 320px;
+  }
+}
